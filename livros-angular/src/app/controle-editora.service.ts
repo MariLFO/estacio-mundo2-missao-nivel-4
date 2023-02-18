@@ -11,4 +11,13 @@ export class ControleEditoraService {
     { codEditora: 3, nome: 'Editora C' }
   ];
   constructor() { }
+
+  getEditoras(): Array<Editora> {
+    return this.editoras;
+  }
+
+  getNomeEditora(codEditora: number): string {
+    const editora = this.editoras.filter(e => e.codEditora === codEditora)[0];
+    return editora ? editora.nome : '';
+  }
 }
