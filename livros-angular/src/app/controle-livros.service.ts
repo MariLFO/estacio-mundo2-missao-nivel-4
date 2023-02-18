@@ -30,4 +30,8 @@ export class ControleLivrosService {
   ];
 
   constructor() { }
+
+  obterLivros(): Array<Livro> {
+    return this.livros;
+  }
 }
