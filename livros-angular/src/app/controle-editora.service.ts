@@ -5,6 +5,10 @@ import { Editora } from './editora';
   providedIn: 'root'
 })
 export class ControleEditoraService {
-  editoras: Array<Editora> = [];
+  editoras: Array<Editora> = [
+    { codEditora: 1, nome: 'Editora A' },
+    { codEditora: 2, nome: 'Editora B' },
+    { codEditora: 3, nome: 'Editora C' }
+  ];
   constructor() { }
 }
