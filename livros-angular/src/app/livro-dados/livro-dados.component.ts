@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Livro } from "../livro";
 import { Editora } from "../editora";
 import { ControleEditoraService } from "../controle-editora.service";
@@ -10,7 +10,8 @@ import { Router } from "@angular/router";
   templateUrl: './livro-dados.component.html',
   styleUrls: ['./livro-dados.component.css']
 })
-export class LivroDadosComponent {
+
+export class LivroDadosComponent implements OnInit {
   public livro: Livro;
   public autoresForm: string = '';
   public editoras: Array<Editora> = [];
@@ -20,5 +21,9 @@ export class LivroDadosComponent {
     private servLivros: ControleLivrosService,
     private router: Router) {
     this.livro = new Livro();
+  }
+
+  ngOnInit(): void {
+    this.editoras = this.servEditora.getEditoras();
   }
 }
