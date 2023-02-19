@@ -26,4 +26,10 @@ export class LivroDadosComponent implements OnInit {
   ngOnInit(): void {
     this.editoras = this.servEditora.getEditoras();
   }
+
+  incluir = () => {
+    this.livro.autores = this.autoresForm.split('\n');
+    this.servLivros.incluir(this.livro);
+    this.router.navigateByUrl('/lista');
+  }
 }
