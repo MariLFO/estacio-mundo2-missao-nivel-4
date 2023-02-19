@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Livro} from "../livro";
+import {Editora} from "../editora";
 
 @Component({
   selector: 'app-livro-dados',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./livro-dados.component.css']
 })
 export class LivroDadosComponent {
+  public livro: Livro;
+  public autoresForm: string = '';
+  public editoras: Array<Editora> = [];
 
+  constructor() {
+    this.livro = new Livro();
+  }
 }
