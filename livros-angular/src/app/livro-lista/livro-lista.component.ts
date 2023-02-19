@@ -22,4 +22,13 @@ export class LivroListaComponent implements OnInit {
     this.editoras = this.servEditora.getEditoras();
     this.livros = this.servLivros.obterLivros();
   }
+
+  excluir = (codigo: number) => {
+    this.servLivros.excluir(codigo);
+    this.livros = this.servLivros.obterLivros();
+  }
+
+  obterNome = (codEditora: number): string => {
+    return this.servEditora.getNomeEditora(codEditora);
+  }
 }
