@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Editora } from "../editora";
+import { Livro } from "../livro";
+import { ControleEditoraService } from '../controle-editora.service';
+import { ControleLivrosService } from '../controle-livros.service';
 
 @Component({
   selector: 'app-livro-lista',
@@ -6,5 +10,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./livro-lista.component.css']
 })
 export class LivroListaComponent {
+  public editoras: Array<Editora> = [];
+  public livros: Array<Livro> = [];
 
+  constructor(
+    private servEditora: ControleEditoraService,
+    private servLivros: ControleLivrosService
+  ) {
+  }
 }
